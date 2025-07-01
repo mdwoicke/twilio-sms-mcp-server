@@ -1,5 +1,7 @@
 # Twilio MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@mdwoicke/twilio-sms-mcp-server)](https://smithery.ai/server/@mdwoicke/twilio-sms-mcp-server)
+
 A Model Context Protocol (MCP) server that enables Claude and other AI assistants to send SMS and MMS messages using Twilio.
 
 ## Demo
