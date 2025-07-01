@@ -1,0 +1,29 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['build/index.js'], env: { ACCOUNT_SID: config.accountSid, AUTH_TOKEN: config.authToken, FROM_NUMBER: config.fromNumber } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - accountSid
+      - authToken
+      - fromNumber
+    properties:
+      accountSid:
+        type: string
+        description: Your Twilio account SID
+      authToken:
+        type: string
+        description: Your Twilio auth token
+      fromNumber:
+        type: string
+        description: Your Twilio phone number in E.164 format (e.g., +11234567890)
+  exampleConfig:
+    accountSid: ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    authToken: your_auth_token
+    fromNumber: "+11234567890"
